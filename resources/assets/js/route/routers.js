@@ -26,13 +26,6 @@ const notFound = resolve => {
     }, 'fourOFour');
 };
 
-//---------------------------测试----------------------------------
-const test = resolve => {
-    require.ensure(['../views/test.vue'], () =>{
-        resolve(require('../views/test.vue'));
-    }, 'test');
-};
-
 
 const routes = [
     
@@ -51,19 +44,13 @@ const routes = [
         path: '/404',
         name: 'notFound',
         component: notFound
-    },
-
-    {
-        path: '/test',
-        name: 'test',
-        component: test
     }
     
 ];
 
 export default new Router({
     routes,
-    // mode:'history',
+    mode:'history',
     // scrollBehavior (to,from,savedPosition) {
     //     if(to.hash) {
     //         return {
